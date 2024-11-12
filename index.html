@@ -718,21 +718,22 @@ Adriana Picoral
 </section>
 <section id="remove-nth-node" class="slide level2">
 <h2>Remove Nth node</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>public Node&lt;T&gt; pop(int index) {</span>
-<span id="cb9-2"><a href=""></a>  if (index &lt; length &amp;&amp; index &gt;= 0) {</span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {java} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href=""></a>public Node&lt;T&gt; pop(int n) {</span>
+<span id="cb9-2"><a href=""></a>  if (n &gt;= 0 &amp;&amp; n &lt; length) {</span>
 <span id="cb9-3"><a href=""></a>    Node&lt;T&gt; current = head;</span>
 <span id="cb9-4"><a href=""></a>    Node&lt;T&gt; previous = null;</span>
-<span id="cb9-5"><a href=""></a>    for (int i = 0; i &lt; index; i++) {</span>
+<span id="cb9-5"><a href=""></a>    for (int i = 0; i &lt; n; i++) {</span>
 <span id="cb9-6"><a href=""></a>      previous = current;</span>
 <span id="cb9-7"><a href=""></a>      current = current.getNext();</span>
 <span id="cb9-8"><a href=""></a>    }</span>
-<span id="cb9-9"><a href=""></a>    if (previous != null) {</span>
-<span id="cb9-10"><a href=""></a>      previous.setNext(current.getNext());</span>
-<span id="cb9-11"><a href=""></a>    }</span>
+<span id="cb9-9"><a href=""></a>    if (previous == null) return pop();</span>
+<span id="cb9-10"><a href=""></a>    else previous.setNext(current.getNext());</span>
+<span id="cb9-11"><a href=""></a>    length--;</span>
 <span id="cb9-12"><a href=""></a>    return current;</span>
 <span id="cb9-13"><a href=""></a>  }</span>
 <span id="cb9-14"><a href=""></a>  return null;</span>
-<span id="cb9-15"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-15"><a href=""></a>  </span>
+<span id="cb9-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="applications" class="slide level2">
 <h2>Applications</h2>
